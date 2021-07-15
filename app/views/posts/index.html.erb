@@ -7,16 +7,18 @@
   </ul>
 </header>
 
-<% post_1 = "今日はRailsの学習です。" %>
-<% post_2 = "プログラミング、意外と簡単。" %>
+<% posts = [
+  "今日はRailsの学習です。",
+  "プログラミング、意外と簡単。",
+  "この調子で続けて行こう。",
+] %>
 
 <div class="main posts-index">
   <div class="container">
+    <% posts.each do |post| %>
     <div class="posts-index-item">
-      <%= post_1 %>
+      <%= post %>
     </div>
-    <div class="posts-index-item">
-      <%= post_2 %>
-    </div>
+    <% end %>
   </div>
 </div>
