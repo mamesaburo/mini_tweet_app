@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to "MiniTweet", root_path %>
+      </div>
+      <ul class="header-menus">
+        <li><%= link_to "MiniTweetについて", about_path %></li>
+        <li><%= link_to "投稿一覧", posts_index_path %></li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
