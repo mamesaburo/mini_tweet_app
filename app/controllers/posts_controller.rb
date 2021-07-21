@@ -3,8 +3,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    redirect_to posts_index_path
   end
-  
+
   def index
     @posts = Post.all
   end
