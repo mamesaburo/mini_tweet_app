@@ -28,6 +28,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect_to posts_index_path
   end
 end
