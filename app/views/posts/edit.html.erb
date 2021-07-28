@@ -4,7 +4,7 @@
     <%= form_tag update_post_path do %>
       <div class="form">
         <div class="form-body">
-          <%@post.errors.full_messages.each do |messages| %>
+          <% @post.errors.full_messages.each do |messages| %>
             <div class="form-error"><%= messages %></div>
           <% end %>
           <textarea name="content"><%= @post.content %></textarea>
