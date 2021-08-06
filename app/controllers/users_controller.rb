@@ -14,10 +14,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: params[:name], email: params[:email])
     if @user.save
-      flash[:notice] = "ユーザーを登録しました！"
+      flash[:notice] = 'ユーザーを新規登録しました！'
       redirect_to user_path @user
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 end
