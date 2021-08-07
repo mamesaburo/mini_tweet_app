@@ -4,6 +4,9 @@
     <%= form_tag user_path, method: :patch do %>
       <div class="form users-form">
         <div class="form-body">
+          <% @user.errors.full_messages.each do |message| %>
+            <div class="form-error"><%= message %></div>
+          <% end %>
           <p>ユーザー名</p>
           <input name="name" value="<%= @user.name %>">
           <p>メールアドレス</p>
