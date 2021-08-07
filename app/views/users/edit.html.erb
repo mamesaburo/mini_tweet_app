@@ -1,15 +1,16 @@
 <div class="main users-edit">
   <div class="container">
     <div class="form-heading">ユーザーの編集</div>
-    <div class="form users-form">
-      <div class="form-body">
-
-        <p>ユーザー名</p>
-        <input>
-        <p>メールアドレス</p>
-        <input>
-        <input type="submit" value="保存">
+    <%= form_tag user_path, method: :patch do %>
+      <div class="form users-form">
+        <div class="form-body">
+          <p>ユーザー名</p>
+          <input name="name">
+          <p>メールアドレス</p>
+          <input name="email">
+          <input type="submit" value="保存">
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
