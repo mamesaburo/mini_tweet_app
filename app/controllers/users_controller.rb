@@ -33,6 +33,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.image = "user_#{@user.id}.png"
     if @user.save
       flash[:notice] = 'ユーザー情報を編集しました。'
       redirect_to user_path @user
