@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'posts/:id/update', to: 'posts#update', as: :update_post
   post 'posts/:id/destroy', to: 'posts#destroy', as: :destroy_post
   get 'login', to: 'users#login_page'
+  post 'login', to: 'users#login'
 
   resources :users
 end
