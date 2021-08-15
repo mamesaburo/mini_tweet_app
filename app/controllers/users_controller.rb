@@ -50,5 +50,11 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email: params[:email], password: params[:password])
+    if @user
+      flash[:notice] = "ログインしました。"
+      redirect_to posts_index_path
+    else
+      render :login_page
+    end
   end
 end
