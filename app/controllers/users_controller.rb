@@ -49,5 +49,6 @@ class UsersController < ApplicationController
   end
 
   def login
+    @user = User.find_by(email: params[:email], password: params[:password])
   end
 end
