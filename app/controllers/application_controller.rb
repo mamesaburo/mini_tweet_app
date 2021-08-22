@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def limitation_login_user
+    if @current_user
+      flash[:notice] = "すでにログイン状態です。"
+      redirect_to posts_index_path
+    end
+  end
 end
