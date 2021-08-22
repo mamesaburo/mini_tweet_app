@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:index, :show, :edit, :update]
+  before_action :limitation_login_user, only: [:new, :create, :login_page, :login]
+
   def index
     @users = User.all
   end
@@ -16,8 +19,10 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       image: "default.png",
+      password: params[:password],
     )
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = 'ユーザーを新規登録しました！'
       redirect_to user_path @user
     else
